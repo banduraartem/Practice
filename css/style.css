@@ -1,0 +1,748 @@
+/* =========================================
+   1. CSS VARIABLES
+   ========================================= */
+:root {
+  --color-gold: #C6B069;
+  --color-gold-hover: #b09c5a;
+  --color-dark-text: #222222;
+  --color-gray-text: #777777;
+  --color-dark-navy: #04091E;
+  --color-white: #ffffff;
+  --color-border: #EEEEEE;
+  --color-bg-light: #F9F9FF;
+  
+  --font-primary: 'Poppins', sans-serif;
+  
+  --container-max-width: 1140px;
+  --container-padding: 16px;
+  --transition-speed: 0.3s;
+}
+
+/* =========================================
+   2. RESET & BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-dark-text);
+  background-color: var(--color-white);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed) ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-dark-text);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.text-gold { 
+  color: var(--color-gold); 
+}
+
+.bg-white { 
+  background-color: var(--color-white); 
+}
+
+.bg-light { 
+  background-color: var(--color-bg-light); 
+}
+
+/* =========================================
+   3. LAYOUT COMPONENTS
+   ========================================= */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--color-gray-text);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.header-light .section-title,
+.header-light .section-subtitle {
+  color: var(--color-white);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-hover);
+}
+
+/* =========================================
+   4. HEADER
+   ========================================= */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.top-bar {
+  background: transparent;
+  padding: 10px 0;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info, .social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-info a, .social-links a {
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.contact-info a:hover, .social-links a:hover {
+  color: var(--color-gold);
+}
+
+.nav-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+}
+
+.nav-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.mobile-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  margin-bottom: 6px;
+}
+
+.mobile-toggle span:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   5. HERO SECTION
+   ========================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(4, 9, 30, 0.7);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 670px;
+}
+
+.hero-title {
+  color: var(--color-white);
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+/* =========================================
+   6. SERVICES SECTION
+   ========================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.service-card {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: box-shadow var(--transition-speed);
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.card-desc {
+  color: var(--color-gray-text);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* =========================================
+   7. GALLERY SECTION
+   ========================================= */
+.gallery-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  height: 256px;
+  display: block;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-speed) ease;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay-title {
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-gold);
+  padding: 12px 24px;
+  margin-bottom: 12px;
+}
+
+.gallery-mosaic {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* =========================================
+   8. FEATURES SECTION
+   ========================================= */
+.features {
+  background-color: var(--color-gold);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.feature-card {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.feature-header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* =========================================
+   9. TESTIMONIALS SECTION
+   ========================================= */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.testimonial-card {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.client-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.client-text {
+  color: var(--color-gray-text);
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.client-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.star-rating .star {
+  color: #777777;
+  font-size: 16px;
+}
+
+.star-rating .star.filled {
+  color: var(--color-gold);
+}
+
+/* =========================================
+   10. CTA SECTION
+   ========================================= */
+.cta-section {
+  margin-bottom: 80px;
+}
+
+.cta-box {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  padding: 96px 32px;
+  text-align: center;
+}
+
+.cta-title {
+  color: var(--color-white);
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.cta-text {
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 32px;
+  max-width: 512px;
+  margin-inline: auto;
+}
+
+/* =========================================
+   11. BLOG SECTION
+   ========================================= */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.blog-image-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.blog-image-wrapper img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform var(--transition-speed) ease;
+}
+
+.blog-card:hover .blog-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.blog-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  border: 1px solid var(--color-border);
+  color: var(--color-dark-text);
+  font-size: 12px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: border-color var(--transition-speed);
+}
+
+.tag:hover {
+  border-color: var(--color-gold);
+}
+
+.blog-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.blog-title:hover {
+  color: var(--color-gold);
+}
+
+.blog-excerpt {
+  color: var(--color-gray-text);
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.blog-date {
+  color: var(--color-dark-text);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* =========================================
+   12. BRANDS SECTION
+   ========================================= */
+.brands-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.brand-logo {
+  max-height: 70px;
+  opacity: 0.5;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.brand-logo:hover {
+  opacity: 1;
+}
+
+/* =========================================
+   13. FOOTER
+   ========================================= */
+.site-footer {
+  background-color: var(--color-white);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.widget-title {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.widget-text {
+  color: var(--color-gray-text);
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-form input {
+  flex: 1;
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-bg-light);
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.newsletter-form input:focus {
+  border-color: var(--color-gold);
+}
+
+.newsletter-form button {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.footer-socials a {
+  color: #CCC;
+  margin-right: 16px;
+}
+
+.footer-socials a:hover {
+  color: var(--color-gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+}
+
+.copyright {
+  color: var(--color-gray-text);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* =========================================
+   14. DESKTOP MEDIA QUERY
+   ========================================= */
+@media (min-width: 769px) {
+  
+  .section-title {
+    font-size: 36px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .mobile-toggle { 
+    display: none; 
+  }
+  
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .desktop-nav a, 
+  .desktop-nav button {
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .desktop-nav a:hover, 
+  .desktop-nav button:hover {
+    color: var(--color-gold);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  .testimonial-card {
+    flex-direction: row; 
+    align-items: flex-start;
+  }
+
+  .gallery-mosaic {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 300px);
+  }
+
+  .item-large {
+    grid-column: span 2; 
+    grid-row: span 1;   
+  }
+
+  .item-top-right {
+    grid-column: span 1; 
+    grid-row: span 1;    
+  }
+
+  .item-bottom-1, 
+  .item-bottom-2, 
+  .item-bottom-3 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+/* BURGER MENU */
+.nav-bar {
+  position: relative; /* Додаємо цей рядок */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+}
+
+/* Додаємо плавний перехід для ліній бургера */
+.mobile-toggle span {
+  transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+/* Ефект перетворення бургера на хрестик (при додаванні класу .active) */
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Стилі для мобільного меню, коли воно ВІДКРИТЕ (працює лише до 768px) */
+@media (max-width: 768px) {
+  .desktop-nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Випадає рівно під шапкою навігації */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-dark-navy);
+    padding: 24px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    gap: 16px;
+    z-index: 999;
+  }
+
+  .desktop-nav.active a, 
+  .desktop-nav.active button {
+    display: block;
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+  }
+
+  /* Видаляємо нижню лінію у останнього елемента в списку */
+  .desktop-nav.active a:last-child,
+  .desktop-nav.active button:last-child {
+    border-bottom: none;
+  }
+}
